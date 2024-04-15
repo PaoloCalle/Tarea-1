@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amssymb} % Para simbolos matematicos
+\usepackage{amsmath} % Para alineacion y otros entornos matematicos
+\usepackage{array}   % Para el manejo mejorado de tablas
+
+\begin{document}
+
+% Sin numeracion automatica para secciones
+\section*{Teorema 2}
+
+Los siguientes afirmaciones son equivalentes para un grupo $G$.\\
+
+% Uso de array para simular una tabla sin bordes
+\noindent\begin{tabular}{@{} >{\itshape}l @{}}
+$P(G)=1$ \\
+$G^{\prime}=\{1\}$ \\
+$G$ es abeliano \\
+$C_G(a)=G$ para todo $a \in G$. \\
+$Z(G)=G$ \\
+$G / G^{\prime} \cong G$. \\
+\end{tabular}
+
+% Seccion sin numeracion
+\section*{Demostraci\'on}
+
+Si $P(G)=1$, entonces $|L(G)|=|G|^2$. Luego $L(G)=G^2$, y esto significa $x y=y x$ para todo $x, y \in G$. As\'i $G$ es un grupo abeliano. Es inmediato observar que el razonamiento inverso también es cierto, lo que prueba que la primera afirmaci\'on es equivalente a la tercera.\\
+
+\textit{Según este resultado, para tener grados de conmutatividad diferentes de 1 debemos analizar grupos no abelianos.}
+
+\end{document}
