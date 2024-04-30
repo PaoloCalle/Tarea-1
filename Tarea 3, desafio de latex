@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{float}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm}
+\graphicspath{ {images/} }
+\usepackage[backend=biber]{biblatex}
+\addbibresource{Practica de heuristica.bib}
+\title{Hay infinitos numeros triangulares que son cuadraticos}
+\author{Paolo Calle }
+\date{April 2024}
+\theoremstyle{plain} \newtheorem{thm}{Teorema}[section]
+\begin{document}
+
+\maketitle
+
+\section{Introduccion}
+\subsection{Enfoque de la demostracion}
+Dado que  a excepcion del 1, un numero cuadratico de la forma n**2 crece mas rapido que un numero triangular n(n+1)/2, si hay algun numero triangular que sea cuadratico este tendra un numero de posicion superior
+Ejemplo:
+36 es el numero cuadratico numero 6 y
+36 es el numero trianguar numero 8
+(fuente Practica de heuristica)
+\cite{Practica}
+\subsection{Demostracion}
+Si 1 < n:
+$ n^2 > n $,
+$ 2n^2 > n + n^2 $,
+$ n^2 > n(n+1)/2 $
+\section{2.-Demostracion}
+Para la demoestracion tomaremos la forma de (n-k)**2, que es el equivalente a, dada la posicion de un numero triangular entonces encontraremos un numero cuadratico en posiciones un numero de posicion inferior.
+Aunque tambien se podria tomar en el otro sentido, dado un numero cuadratico, entonces buscamos un numero triangular en una posicion superior
+\begin{equation}
+    \frac{n(n+1)}{2}=(n-k)^2
+\end{equation}
+\begin{equation}
+    \frac{n^2+n}{1}=2(n^2-2nk+k^2)
+\end{equation}
+\begin{equation}
+    \frac {n^2}{1}+n(-4k-1)+2k^2=0
+\end{equation}
+Aplicando la formula cuadratica
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)
+\end{equation}
+\begin{equation}
+\frac{4k+1-\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(-n)
+\end{equation}
+\includegraphics[width=8cm]{download (11)}
+Se puede notar que cualquier valor de k tal que n>k>=1, donde k pertenece a los naturales,cumpla y de un valor entero positivo para n, entonces
+es un valor que permite encontarar un numero cuadratico 
+y triangular.
+Cabe recalcar que solo tiene sentigo geometrico la solucion postiva
+\subsection{Demostracion, La solucion negativa no tiene sentido}
+$
+    4k^2+4k>0
+    =8k^2+8k+1>4k^2+4k+1
+    =16k^2+8k+1-8k^2>4k^2+4k+1
+    =(4k+1)^2-8k^2>(2k+1)^2
+    =\sqrt[2]{(4k+1)^2-8k^2}>2k+1
+    =4k+1-\sqrt[2]{(4k+1)^2-8k^2}<2k
+$
+\begin{equation}
+    =n=\frac{4k+1-\sqrt[2]{(4k+1)^2-8k^2}}{2}<k
+\end{equation}
+Lo que es una contradiccion
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)=8
+\end{equation}
+Debido a:
+\begin{equation}
+    \frac{k}{1}=2
+\end{equation}
+\subsection{Preguntas}
+El caso de k = 2, es un resultado encontrado debido a "experimentacion" con valores aleatorios, pero aqui es donde surge la pregunta ¿Donde esta el siguiente valor de k, para el cual la funcion nos devuelva un valor entero?, ¿Existe algun algoritmo para encontrar siempre un siguiente k?, ¿Cuantos numeros k, cumplen para que la funcion nos devuleva valores enteros?
+¿ existen k infinitos o  finitos?
+\subsection{Respuestas}
+Si remplazamos n por 8 entonces nos queda una ecuacion de segundo grado para hallar k
+\begin{equation}
+    \frac{8(8+1)}{2}=(8-k)^2
+\end{equation}
+\begin{thm} 
+    Formula para los naturales "n"
+\end{thm}
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)
+\end{equation}
+Remplazando.....
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)=8
+\end{equation}
+\begin{equation}
+    \frac{4k+1-\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)=8
+\end{equation}
+La primera solucion es 2 la cual coincide con la funcion anterior, pero la segunda solucion 14, si bien no tiene sentido por las condiciones previas, indica cual es el siguiente k para el cual existe un n.
+si k = 14 en:
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=f(+n)
+\end{equation}
+Entonces
+\begin{equation}
+    \frac{n}{1}=49
+\end{equation}
+Si somos precisos el proceso no es mas que tomar las dos soluciones posibles para n,  la primera indica el valor para el cual hay un k valido y que cumple las condicione previas, mientras que la segunda solucion, si bien sin aparente sentido, indica el siguiente valor de k para el cual existira un n valido que satisfaga las condiciones previamente planteadas.
+
+SI tenemos el siguiente k, entonces solo se remplaza por ese k en la ecuacion postiva, entonces tendre un n valido, y con repetir este proceso puedo encontrar los k y n validos, para dar paso a numeros triangulares y cuadraticos.
+para saber si este proceso se repite indefinidamente entonces:
+\begin{equation}
+    \frac{4k+1+\sqrt[2]{(4k+1)^2-8k^2}}{2}=c
+\end{equation}
+\begin{equation}
+    (4k+1)^2-8k^2=0
+\end{equation}
+\begin{equation}
+    \frac{-2-\sqrt[2]{2}}{4}=k
+\end{equation}
+Se realiza de este modo pues, el algoritmo puede continuar siempre y cuando existan 2 valores de k, en caso de haber menos, habra un  punto donde el algoritmo se congele y termine en un ciclo de numeros, pero como esto no puede ocurrir para k naturales, entonces este procedimiento puede seguir indefinidamente, por lo que hay infinitos k, infinitos n y por ende infinitos numeros triangulares y cuadraticos.
+\begin{tabular}{|l|l|p{5cm}|}
+\hline 
+n & k & Cuadratico-Triangular \\
+\hline 
+8 & 2 & 36 \\
+49 & 14 & 1225 \\
+288 & 84 & 41616 \\ 
+\hline 
+\end{tabular}
+\end{document}
