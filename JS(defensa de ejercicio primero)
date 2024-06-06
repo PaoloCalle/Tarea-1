@@ -1,0 +1,19 @@
+// Definir la aceleración del coche
+const a = 1.55; // m/s^2
+
+// Inicializar arrays para almacenar resultados
+let tiempo = []; // Tiempo en segundos, desde 0 hasta 10 segundos
+let distancia = []; // Distancia recorrida en metros
+let velocidad = []; // Velocidad en m/s
+
+// Calcular la velocidad y distancia cada segundo durante 10 segundos
+for (let i = 0; i <= 10; i++) {
+    tiempo.push(i); // Tiempo desde 0 hasta 10 segundos
+    distancia.push(0.5 * a * Math.pow(tiempo[i], 2)); // Fórmula para la distancia
+    velocidad.push(a * tiempo[i]); // Fórmula para la velocidad
+}
+
+// Mostrar resultados en una tabla
+console.table([
+    {Tiempo: tiempo, Distancia: distancia, Velocidad: velocidad}
+]);
