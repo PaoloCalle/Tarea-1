@@ -1,0 +1,24 @@
+// Capital inicial
+let capital_inicial = 1000;
+
+// Tasa de interés anual
+let tasa_interes = 0.065;
+
+// Número de años
+let num_anios = 10;
+
+// Crear un array para almacenar los balances a lo largo del tiempo
+let balances = [];
+
+// Inicializar el primer año con el capital inicial
+balances[0] = capital_inicial;
+
+// Calcular el balance para cada año
+for (let ano = 1; ano <= num_anios; ano++) {
+    // Actualizar el balance con el interés compuesto
+    balances[ano] = balances[ano - 1] * (1 + tasa_interes);
+}
+
+// Mostrar los balances en la consola
+console.log('Balance de la cuenta de ahorro a fin de año durante 10 años:');
+console.log(balances);
