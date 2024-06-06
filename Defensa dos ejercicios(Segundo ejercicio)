@@ -1,0 +1,18 @@
+% Definir la aceleración del coche
+a = 1.55; % m/s^2
+
+% Inicializar variables para almacenar resultados
+tiempo = zeros(1, 11); % Tiempo en segundos, desde 0 hasta 10 segundos
+distancia = zeros(1, 11); % Distancia recorrida en metros
+velocidad = zeros(1, 11); % Velocidad en m/s
+
+% Calcular la velocidad y distancia cada segundo durante 10 segundos
+for i = 1:11
+    tiempo(i) = (i-1); % Tiempo desde 0 hasta 10 segundos
+    distancia(i) = 0.5 * a * (tiempo(i))^2; % Fórmula para la distancia
+    velocidad(i) = a * tiempo(i); % Fórmula para la velocidad
+end
+
+% Mostrar resultados en una tabla
+disp('Tiempo (s) | Distancia (m) | Velocidad (m/s)')
+disp([tiempo', distancia', velocidad'])
